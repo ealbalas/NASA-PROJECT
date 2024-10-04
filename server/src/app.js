@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path =require('path');
 
 const planetsRouter = require('./routes/planets/planets.router');
 
@@ -10,6 +11,7 @@ app.use(cors({
     optionsSuccessStatus: 200,
 }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(planetsRouter);
 
 module.exports = app;
