@@ -21,7 +21,7 @@ function getAllLaunches() {
 
 function addNewLaunch(launch) {
     latestFlightNumber++;
-    launches.set(launch.flightNumber, Object.assign(launch, {
+    launches.set(latestFlightNumber, Object.assign(launch, {
         customer: ['BO', 'SpaceX', 'NASA'],
         flightNumber: latestFlightNumber,
         upcoming: true,
