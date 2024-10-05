@@ -1,6 +1,9 @@
+const request = require('supertest');
+const app = require('../../app');
+
 describe('Test GET /launches', () => {
     test('It should respond with 200 success', () => {
-        const response = 200;
+        const response = request(app);
         expect(response).toBe(200);
     });
 });
