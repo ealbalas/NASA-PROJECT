@@ -27,15 +27,21 @@ function addNewLaunch(req, res) {
 }
 
 function deleteLaunch(req, res) {
-    const launchId = req.params.id;
+    const launchId = +req.params.id;
 
-    if (!launchesModel.existsLaunchWithId()) {
-        return res.status(404).json
-    }
-
+    if (!launchesModel.existsLaunchWithId(launchId)) {
+        return res.status(404).json({
+            error: 'Launch not found',
+        });
+    } 
+    
+    const aborted = launchesModel.abortLaunch(launchId);
+    return res.status(200).json(aborted);
 }
+
 
 module.exports = {
     getAllLaunches,
     addNewLaunch,
+    deleteLaunch,
 }

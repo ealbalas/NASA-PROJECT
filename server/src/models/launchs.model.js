@@ -33,9 +33,16 @@ function existsLaunchWithId(launchId) {
     return launches.has(launchId);
 }
 
+function abortLaunch(launchId) {
+    const aborted = launches.get(launchId);
+    aborted.upcoming = false;
+    aborted.sucess = false;
+    return aborted;
+}
 
 module.exports = {
     getAllLaunches,
     addNewLaunch,
     existsLaunchWithId,
+    abortLaunch,
 }
