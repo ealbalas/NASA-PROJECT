@@ -2,6 +2,9 @@
 
 This project is designed to serve as a backend API for managing planetary data and space launches. Built using **Node.js** and **Express**, the application exposes routes for interacting with planetary and launch data. It handles incoming requests from the client-side (e.g., frontend running on `localhost:3000`) and provides JSON responses for various endpoints.
 
+## To Run
+From dir 'npm install' to install dependiencies and 'npm run deploy' to run application.
+
 ## 1. App Setup (`app.js`)
 
 The core of the application is configured in `app.js`. The following features are set up:
