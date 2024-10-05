@@ -16,20 +16,20 @@ describe('Test POST /launch', () => {
         rocket: "NCC 1701-D",
         target: "Kepler-186 f",
         launchDate: "January 1, 2030",
-    }
+    };
 
     const launchDataWithoutDate = {
         mission: "USS Enterprise",
         rocket: "NCC 1701-D",
         target: "Kepler-186 f",
-    }
+    };
 
     const launchDataWithBadDate = {
         mission: "USS Enterprise",
         rocket: "NCC 1701-D",
         target: "Kepler-186 f",
         launchDate: "BAD",
-    }
+    };
 
     test('It should respond with 201 created', async () => {
         const response = await request(app)
