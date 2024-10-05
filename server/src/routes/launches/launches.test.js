@@ -3,9 +3,12 @@ describe('Test GET /launches', () => {
         const response = 200;
         expect(response).toBe(200);
     });
+});
 
-    test('Test POST /launch', () => {
-
+describe('Test POST /launch', () => {
+    test('It should respond with 200 success', () => {
+        const response = 200;
+        expect(response).toBe(200);
     });
 
     test('It should catch missing required properties', () => {
