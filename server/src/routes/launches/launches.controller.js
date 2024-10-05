@@ -26,6 +26,15 @@ function addNewLaunch(req, res) {
     return res.status(201).json(launch);
 }
 
+function deleteLaunch(req, res) {
+    const launchId = req.params.id;
+
+    if (!launchesModel.existsLaunchWithId()) {
+        return res.status(404).json
+    }
+
+}
+
 module.exports = {
     getAllLaunches,
     addNewLaunch,
