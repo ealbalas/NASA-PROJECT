@@ -5,18 +5,19 @@ const planets = require('./planets.mongo');
 
 const DEFAULT_FLIGHT_NUMBER = 100;
 
-const launch = {
-    flightNumber: 100,
-    mission: 'Kepler Exploration X',
-    rocket: 'Explorer IS1',
-    launchDate: new Date('December 27, 2030'),
-    target: 'Kepler-442 b',
-    customers: ['BO', 'SpaceX', 'NASA'],
-    upcoming: true,
-    success: true,
-}
+// no longer need this code since we have connected to API
+// const launch = {
+//     flightNumber: 100,
+//     mission: 'Kepler Exploration X',
+//     rocket: 'Explorer IS1',
+//     launchDate: new Date('December 27, 2030'),
+//     target: 'Kepler-442 b',
+//     customers: ['BO', 'SpaceX', 'NASA'],
+//     upcoming: true,
+//     success: true,
+// }
 
-saveLaunch(launch);
+// saveLaunch(launch);
 
 const SPACEX_API_URL = "https://api.spacexdata.com/v5/launches/query";
 
@@ -83,6 +84,7 @@ async function getAllLaunches(skip, limit) {
         _id: 0,
         __v: 0,
     })
+    .sort({ flightNumber: 1 })
     .skip(skip)
     .limit(limit));
 }
