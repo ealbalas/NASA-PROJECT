@@ -16,5 +16,5 @@
 .env.test.local
 .env.production.local
 .eslintcache
-
+.env
 node_modules
