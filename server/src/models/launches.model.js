@@ -82,7 +82,9 @@ async function getAllLaunches() {
     return Array.from(await launches.find({}, {
         _id: 0,
         __v: 0,
-    }));
+    })
+    .skip(20)
+    .limit(50));
 }
 
 async function getLatestFlightNumber() {
