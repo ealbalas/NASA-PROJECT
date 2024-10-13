@@ -26,6 +26,9 @@
   },
   "homepage": "https://github.com/ealbalas/NASA-PROJECT#readme",
   "dependencies": {
-    "morgan": "^1.10.0"
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.7.1",
+    "morgan": "^1.10.0",
+    "node": "^20.18.0"
   }
 }
