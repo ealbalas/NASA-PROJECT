@@ -26,17 +26,24 @@ async function addNewLaunch(req, res) {
     return res.status(201).json(launch);
 }
 
-function deleteLaunch(req, res) {
+async function deleteLaunch(req, res) {
     const launchId = +req.params.id;
-
-    if (!launchesModel.existsLaunchWithId(launchId)) {
+    const exists = await launchesModel.existsLaunchWithId(launchId);
+    if (!exists) {
         return res.status(404).json({
             error: 'Launch not found',
         });
     } 
     
-    const aborted = launchesModel.abortLaunch(launchId);
-    return res.status(200).json(aborted);
+    const aborted = await launchesModel.abortLaunch(launchId);
+    if (!aborted) {
+        return res.status(400).json({
+            error: "Launch not aborted",
+        });
+    }
+    return res.status(200).json({
+        ok: true,
+    });
 }
 
 
