@@ -78,13 +78,13 @@ async function loadLaunchesData() {
     }
 }
 
-async function getAllLaunches() {
+async function getAllLaunches(skip, limit) {
     return Array.from(await launches.find({}, {
         _id: 0,
         __v: 0,
     })
-    .skip(20)
-    .limit(50));
+    .skip(skip)
+    .limit(limit));
 }
 
 async function getLatestFlightNumber() {
