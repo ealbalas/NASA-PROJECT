@@ -59,7 +59,7 @@ async function scheduleNewLaunch(launch) {
     const flightNumber = await getLatestFlightNumber() + 1;
 
     const newLaunch = Object.assign(launch, {
-        customer: ['BO', 'SpaceX', 'NASA'],
+        customers: ['BO', 'SpaceX', 'NASA'],
         flightNumber: flightNumber,
         upcoming: true,
         sucess: true

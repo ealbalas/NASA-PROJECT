@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "watch": "nodemon src/server.js",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "test-watch": "jest --watch",
     "start": "node src/server.js",
     "cluster": "pm2 start src/server.js -i max"
@@ -13,6 +13,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.7",
