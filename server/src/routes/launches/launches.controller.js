@@ -4,7 +4,7 @@ async function getAllLaunches(req, res) {
     return res.status(200).json(await launchesModel.getAllLaunches());
 }
 
-function addNewLaunch(req, res) {
+async function addNewLaunch(req, res) {
     const launch = req.body;
     // console.log(launch);
 
@@ -21,7 +21,7 @@ function addNewLaunch(req, res) {
         });
     }
 
-    launchesModel.addNewLaunch(launch);
+    await launchesModel.scheduleNewLaunch(launch);
 
     return res.status(201).json(launch);
 }
