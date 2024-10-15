@@ -6,7 +6,7 @@ const {
 } = require('../../services/mongo');
 const { describe } = require('node:test');
 const { loadPlanetsData } = require('../../models/planets.model');
-const { loadLaunchesData } = require('./models/launches.model');
+const { loadLaunchesData } = require('../../models/launches.model');
 
 
 describe('Launches API', () => {
